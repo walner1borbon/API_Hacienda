@@ -1,4 +1,20 @@
 <?php
+/*
+ * Copyright (C) 2017-2018 CRLibre <https://crlibre.org>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published
+ * by the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
 function genXML()
 {
@@ -31,7 +47,7 @@ function genXML()
     // Datos receptor
     $receptorNombre         = params_get("receptor_nombre");
     $receptorTipoIdentif    = params_get("receptor_tipo_identif");
-    $recenprotNumIdentif    = params_get("receptor_num_identif");
+    $receptorNumIdentif     = params_get("receptor_num_identif");
     $receptorProvincia      = params_get("receptor_provincia");
     $receptorCanton         = params_get("receptor_canton");
     $receptorDistrito       = params_get("receptor_distrito");
@@ -97,13 +113,13 @@ function genXML()
         'NumeroConsecutivo' => $consecutivo,
         'FechaEmision'      => $fechaEmision,
         'Emisor'            => array(
-            'Nombre' => $emisorNombre,
+            'Nombre'        => $emisorNombre,
             'Identificacion' => array(
                 'Tipo'      => $emisorTipoIdentif,
                 'Numero'    => $emisorNumIdentif,
             ),
-            'NombreComercial' => $nombreComercial,
-            'Ubicacion' => array(
+            'NombreComercial'   => $nombreComercial,
+            'Ubicacion'         => array(
                 'Provincia'     => $emisorProv,
                 'Canton'        => $meisorCanton,
                 'Distrito'      => $emisorDistrito,
@@ -123,7 +139,7 @@ function genXML()
         'CondicionVenta'    => $condVenta,
         'MedioPago'         => $medioPago,
         'DetalleServicio'   => $DetalleServicio,
-        'ResumenFactura' => array(
+        'ResumenFactura'    => array(
             'CodigoMoneda'      => $codMoneda,
             'TipoCambio'        => round($tipoCambio, 5),
             'TotalVenta'        => $TotalComprobante,
@@ -131,8 +147,8 @@ function genXML()
             'TotalComprobante'  => $TotalComprobante,
         ),
         'Normativa' => array(
-            'NumeroResolucion' => 'DGT-R-48-2016',
-            'FechaResolucion' => '20-02-2017 13:22:22',
+            'NumeroResolucion'  => 'DGT-R-48-2016',
+            'FechaResolucion'   => '20-02-2017 13:22:22',
         ),
     );
     $xmltext = array_to_xml($myArray);

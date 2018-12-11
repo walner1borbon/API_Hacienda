@@ -1,10 +1,8 @@
-api/core
 api/files
-api/insall
-api/logs
-api/modules
+api/install
+api/logs/*
 api/resources
-api/tools
+api/errors/*
 nbproject/*
 build/*
 *settings.php
