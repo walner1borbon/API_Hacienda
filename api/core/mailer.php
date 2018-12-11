@@ -329,6 +329,7 @@ function GenerateBody($message)
                                         <br>
                                         <br>
                                         </td>
+
                                     </tr>
                                 </table>
                                 <!-- Button : END -->
